@@ -14,7 +14,7 @@ There are four types of grant in OAuth2.0. <br> - Authorization code <br> - Impl
 
 <br>
 
-# Goals with OAuth2.0 :<br>
+**(1) Goals with OAuth2.0 <br>
 - App should get a Token from the Token Endpoint of OAuth2.0's Authorization server to access some specific resouces in the cloud.<br>
 - In order to get a Token, App has to send the ClientID (and its Client Secret) to the Token Endpoint of OAuth2.0's Authorization server.<br>
 - No ClientIDs should be written in the App because malicious hacker can get it easily and the resouces might have unexpected access from someone.<br>
