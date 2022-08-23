@@ -25,7 +25,7 @@ But I take Client credentials as an example because it is used in Azure's Metada
 - In order to get a Token, App has to send the ClientID (and its Client Secret) to the Token Endpoint of OAuth2.0's Authorization server.<br>
 - No ClientIDs should be written in the App because malicious hacker can get it easily and the resouces might have unexpected access from someone.<br>
 
-**(2) Azure's Metadata Service for Managed ID** <br>
+**ex) Azure's Metadata Service for Managed ID** <br>
 The following picture is the diagram of Azure's Metadata Service for Managed ID.<br>
 Azure's Managed ID uses OAuth2.0 Client credentials technology as far as I know. The ClientID in metadata service is already registered by system administrator of the Azure subscription.<br>
 
