@@ -10,9 +10,8 @@ There are so many methoads to access own cloud resouces from public in general. 
 | #3 | OAuth2.0 | - Doesn't need to use secrets such as Access Keys or connection strings in code. | - Difficult to understand how it works. <br> - You need to write a code with some SDKs to get a token from the authorization server's token endpoint. | - SaaS subscripution for an unspecified number of customers in general. <br> - Service principal in Azure App registration |
 
 # 2. Grant type of OAuth2.0
-There are four types of grant in OAuth2.0. <br> - Authorization code <br> - Implicit <br> - Resource owner password credentials <br> - Client credentials<br><br> But I take Client credentials as an example because it is used in Azure's Metadata Service for Managed ID and easy for me to explain.
+There are four types of grant in OAuth2.0.<br> <br> - Authorization code <br> - Implicit <br> - Resource owner password credentials <br> - Client credentials<br><br> But I take Client credentials as an example because it is used in Azure's Metadata Service for Managed ID and easy for me to explain.
 
-<br>
 
 **(1) Goals with OAuth2.0** <br>
 - App should get a Token from the Token Endpoint of OAuth2.0's Authorization server to access some specific resouces in the cloud.<br>
