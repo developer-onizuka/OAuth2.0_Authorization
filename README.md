@@ -40,6 +40,6 @@ According to the table in #1, OAuth2.0 is the best practice for the accesss from
 - The point is how we should manage a ClientID which is a kind of secrets to get a Token of cloud resouces thru OAuth2.0. <br>
 - The Managed ID is a one of the impriments using OAuth2.0 and it can be used in Azure while IAM role is used in AWS. <br>
 - As it turns out, Managed ID in Azure is a kind of system to manage the ClientID securely thru REST API, I believe. <br>
-- In the Onprem enviornment, the ClientID would be managed by some reliable Database systems getting along with your App instead of Managed ID in cloud. <br>
+- In the on-prem enviornment, the ClientID would be managed in some reliable Database systems getting along with your App instead of Managed ID in cloud. <br>
 
 
