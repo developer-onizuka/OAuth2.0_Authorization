@@ -9,7 +9,7 @@ There are so many methoads to access own cloud resouces from public in general. 
 | #2 | Connection String | - Easy to use. <br> - Safer than User's Access Key. <br> - Define some limitations such as expiration date and IP Address. | - Likely to be leaked if it is used in the source code. <br> - If leaked, it can be used by anyone who obtains it, which can potentially compromise your cloud resources. But it is safer than Access key because it is a connection string for accessing the resources with constraints such as expiration date and accessible IP address. Best practices for SAS is [here](https://docs.microsoft.com/en-us/learn/modules/configure-storage-security/7-apply-best-practices). | - You may use it for some trustworthy person or for temporary. <br> - Internal environment access from onprem server to its organization's own cloud resources. <br> - You should use web app scanner such as OWASP ZAP during your CI/CD pipeline. <br> - SAS in Azure Storage Account <br> - Presigned URL in AWS S3 |
 | #3 | OAuth2.0 | - Doesn't need to use secrets such as Access Keys or connection strings in code. | - Difficult to understand how it works. <br> - You need to write a code with some SDKs to get a token from the authorization server's token endpoint. | - SaaS subscripution for an unspecified number of customers in general. <br> - Service principal in Azure App registration |
 
-# 2. Grant type of OAuth2.0
+# 2. How OAuth2.0 works
 There are four types of grant in OAuth2.0. 
 ```
 - Authorization code
