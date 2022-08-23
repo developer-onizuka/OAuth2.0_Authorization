@@ -17,7 +17,7 @@ There are four types of grant in OAuth2.0.
 - Resource owner password credentials 
 - Client credentials
 ```
-But I take Client credentials as an example because it is used in Azure's Metadata Service for Managed ID and easy for me to explain.
+But I take **Client credentials** as an example because it is used in Azure's Metadata Service for Managed ID and easy for me to explain.
 
 
 **(1) Goals with OAuth2.0** 
