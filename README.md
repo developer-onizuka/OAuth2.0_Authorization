@@ -26,4 +26,4 @@ But I take Client credentials as an example because it is used in Azure's Metada
 - No ClientIDs should be written in the App because malicious hacker can get it easily and the resouces might have unexpected access from someone.<br>
 
 The following picture is the diagram of Azure's Metadata Service for Managed ID.<br>
-
+![metadata_service_Azure_ManagedID.drawio.png](https://github.com/developer-onizuka/OAuth2.0_Authorization/blob/main/metadata_service_Azure_ManagedID.drawio.png)
