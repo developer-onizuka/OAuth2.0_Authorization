@@ -5,4 +5,4 @@ There are so many methoads to access own resouces from public in general. Writin
 
 |  | Method | Proc | Cons | Use Case |
 | --- | --- | --- | --- | --- |
-| #1 | Use Access Key | Easy to use | It is likely to be leaked if it is used in the source code. | Shouldn't use. |
+| #1 | Use Access Key | Easy to use | Likely to be leaked if it is used in the source code. | Shouldn't use. |
