@@ -11,3 +11,10 @@ There are so many methoads to access own cloud resouces from public in general. 
 
 # 2. Grant type of OAuth2.0
 There are four types of grant in OAuth2.0. <br> - Authorization code <br> - Implicit <br> - Resource owner password credentials <br> - Client credentials<br><br> But I take Client credentials as an example because it is used in Azure's Metadata Service for Managed ID and easy for me to explain.
+
+<br>
+
+Goal:<br>
+- App should get a Token from the Token Endpoint of OAuth2.0's Authorization server to access some specific resouces in the cloud.<br>
+- In order to get a Token, App has to send the ClientID (and its Client Secret) to the Token Endpoint of OAuth2.0's Authorization server.<br>
+- No ClientIDs should be written in the App because malicious hacker can get it easily and the resouces might have unexpected access from someone.<br>
