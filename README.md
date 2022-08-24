@@ -10,7 +10,12 @@ There are so many methoads to access own cloud resouces from public in general. 
 | #3 | OAuth2.0 | - Doesn't need to use secrets such as Access Keys or connection strings in code. | - Difficult to understand how it works. <br> - You need to write a code with some SDKs to get a token from the authorization server's token endpoint. | - Zero Trust <br> - SaaS subscripution for an unspecified number of customers in general. <br> - [Service principal](https://github.com/developer-onizuka/OAuth2.0_AzureAD#oauth20_azuread) in Azure App registration |
 
 # 2. How OAuth2.0 works
-There are four types of grant in OAuth2.0. 
+**(1) Goals with OAuth2.0** 
+- App should get a Token from the Token Endpoint of OAuth2.0's Authorization server to access some specific resouces in the cloud.<br>
+- In order to get a Token, App has to send the ClientID (and its Client Secret) to the Token Endpoint of OAuth2.0's Authorization server.<br>
+- No ClientIDs should be written in the App because malicious hacker can get it easily and the resouces might have unexpected access from someone.<br>
+
+By the way, there are four types of grant in OAuth2.0. 
 ```
 - Authorization code
 - Implicit
@@ -18,12 +23,6 @@ There are four types of grant in OAuth2.0.
 - Client credentials
 ```
 But I take **Client credentials** as an example because it is used in Azure's Metadata Service for Managed ID and easy for me to explain.
-
-
-**(1) Goals with OAuth2.0** 
-- App should get a Token from the Token Endpoint of OAuth2.0's Authorization server to access some specific resouces in the cloud.<br>
-- In order to get a Token, App has to send the ClientID (and its Client Secret) to the Token Endpoint of OAuth2.0's Authorization server.<br>
-- No ClientIDs should be written in the App because malicious hacker can get it easily and the resouces might have unexpected access from someone.<br>
 
 **(2) Between cloud resouces** <br>
 You can use Azure's Metadata Service for Managed ID while the access is between cloud resouces.<br>
