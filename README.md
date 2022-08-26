@@ -1,9 +1,9 @@
 # OAuth2.0_Authorization
 
 # 1. Access cloud resouces from public
-There are so many methoads to access own cloud resouces from public in general. Writing them down with proc and cons.
+There are so many methoads to access own cloud resouces from public in general. Writing them down with pros and cons.
 
-|  | Method | Proc | Cons | Use Case |
+|  | Method | Pros | Cons | Use Case |
 | --- | --- | --- | --- | --- |
 | #1 | User's Access Key | - Easy to use. | - Likely to be leaked if it is used in the source code. <br> - If leaked, it can be used by anyone who obtains it, which can potentially compromise your cloud resources and Account itself. | - Shouldn't use because Access key is used as direct access to public API of every cloud resouce which you allow to be controlled. <br> - If you want to use it by some reasons, use it thru environment variables or [opaque type](https://github.com/developer-onizuka/mvc_CosmosDB#3-create-a-secret-resouce-in-kubernetes-cluster). But don't trust it completely. ([Multiple malicious Python packages available on the PyPI repository](https://www.bleepingcomputer.com/news/security/pypi-python-packages-caught-sending-stolen-aws-keys-to-unsecured-sites/)) <br> - You should use web app scanner such as OWASP ZAP during your CI/CD pipeline. |
 | #2 | Connection String | - Easy to use. <br> - Safer than User's Access Key. <br> - Define some limitations such as expiration date and IP Address. | - Likely to be leaked if it is used in the source code. <br> - If leaked, it can be used by anyone who obtains it, which can potentially compromise your cloud resources. But it is safer than Access key because it is a connection string for accessing the resources with constraints such as expiration date and accessible IP address. Best practices for SAS is [here](https://docs.microsoft.com/en-us/learn/modules/configure-storage-security/7-apply-best-practices). | - You may use it for some trustworthy person or for temporary. <br> - Internal environment access from onprem server to its organization's own cloud resources. <br> - Use it thru environment variables or opaque type. But don't trust it completely. <br> - You should use web app scanner such as OWASP ZAP during your CI/CD pipeline. <br> - SAS in Azure Storage Account <br> - Presigned URL in AWS S3 |
