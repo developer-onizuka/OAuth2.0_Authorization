@@ -47,6 +47,6 @@ I believe that ClientID should be managed in some reliable Database systems gett
 | --- | --- | --- |
 | **from on-premises or different cloud subscriptions** <br> (within the organization)| Connection String | Connection String |
 | **from the resources in same cloud subscription** <br> (within the organization)| N/A | OAuth2.0 <br> - AWS: IAM role <br> - Azure: ManagedID |
-| **from anonymous public resources through RESTful API** <br> (outside the organization)| OAuth2.0 <br> (Must make the scheme on your own) | OAuth2.0 <br> (Must make the scheme on your own) |
+| **from anonymous public resources thru RESTful API** <br> (outside the organization)| OAuth2.0 <br> (Must make the scheme on your own) | OAuth2.0 <br> (Must make the scheme on your own) |
 
 
