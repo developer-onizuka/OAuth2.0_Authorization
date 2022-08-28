@@ -48,7 +48,9 @@ I believe that ClientID should be managed in some reliable Database systems gett
 The lazy student decided to live outside dormitory independently. He starts to subscribe two services. One is for housekeeping and the other is for laundry service because he does not have any washing machines in his house. The laundry service can provide a token for subscribers who pay.<br>
 One day, he uses a housekeeping service to have them wash his dirty clothes again. He wants them to use a laundry service instead of himself. What he wants to do is "single sign on" between housekeeping service and laundry service. 
 
-![laundryService_SSO.drawio.png](https://github.com/developer-onizuka/OAuth2.0_Authorization/blob/main/laundryService_SSO.drawio.png)
+![laundryService_SSO.drawio.png](https://github.com/developer-onizuka/OAuth2.0_Authorization/blob/main/laundryService_SSO.drawio.png) <br>
+
+The picture above is based on OAuth2.0 Client credentials flow. But if "Authorization code" is used above, the student will be asked grant for the requeset of housekeeping service by the coin laundry service provider.
 
 # 3. Summary
 - The point is how we should manage a ClientID which is a kind of secrets to get a Token of cloud resouces thru OAuth2.0. <br>
