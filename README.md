@@ -31,7 +31,7 @@ Azure's Managed ID uses OAuth2.0 Client credentials technology as far as I know.
 ![metadata_service_Azure_ManagedID.drawio.png](https://github.com/developer-onizuka/OAuth2.0_Authorization/blob/main/metadata_service_Azure_ManagedID.drawio.png)
 
 **(ex) Laundry service in dormitory** <br>
-Laundry service guy does not have any permission to use washing machine in the dormitory. So he asks dormitory manager a token.<br>
+One day, a lazy student in a dormitory uses a housekeeping service to wash his dirty clothes. The service guy does not have any permission to use washing machine in the dormitory. So he asks dormitory manager a token.<br>
 But dormitory manager does not have any tokens in person, neither. So he asks it for token manager who manages and maintains washing machine in the dormitory.<br>
 
 ![dormitory.drawio.png](https://github.com/developer-onizuka/OAuth2.0_Authorization/blob/main/dormitory.drawio.png)
