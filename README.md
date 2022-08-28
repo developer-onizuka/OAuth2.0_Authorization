@@ -50,7 +50,7 @@ One day, he uses a housekeeping service to have them wash his dirty clothes agai
 
 ![laundryService_SSO.drawio.png](https://github.com/developer-onizuka/OAuth2.0_Authorization/blob/main/laundryService_SSO.drawio.png) <br>
 
-The picture above is based on OAuth2.0 Client credentials flow. But if "Authorization code" is used above, the student will be asked grant for the requeset of housekeeping service by the coin laundry service provider.
+The picture above is based on **OAuth2.0 Client credentials** flow. But if "Authorization code" is used above, the student will be asked grant for the requeset of housekeeping service by the coin laundry service provider.
 
 # 3. Summary
 - The point is how we should manage a ClientID which is a kind of secrets to get a Token of cloud resouces thru OAuth2.0. <br>
