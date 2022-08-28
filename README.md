@@ -44,6 +44,12 @@ I believe that ClientID should be managed in some reliable Database systems gett
 
 ![OAuth2.0_ClientCredentialsFlow.drawio.png](https://github.com/developer-onizuka/OAuth2.0_Authorization/blob/main/OAuth2.0_ClientCredentialsFlow.drawio.png)
 
+**(ex) Laundry service in your home** <br>
+The lazy student decided to live outside dormitory independently. He starts to subscribe two services. One is for housekeeping and the other is for laundry service because he does not have any washing machines in his house. The laundry service can provide a token for subscribers who pay.<br>
+One day, he uses a housekeeping service to have them wash his dirty clothes again. He wants them to use a laundry service instead of himself. What he want to do is "single sign on" with the laundry service through housekeeping service. 
+
+![laundryService_SSO.drawio.png](https://github.com/developer-onizuka/OAuth2.0_Authorization/blob/main/laundryService_SSO.drawio.png)
+
 # 3. Summary
 - The point is how we should manage a ClientID which is a kind of secrets to get a Token of cloud resouces thru OAuth2.0. <br>
 - The Managed ID is one of implementation using OAuth2.0 and it can be used in Azure while IAM role is used in AWS. <br>
