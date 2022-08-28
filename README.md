@@ -30,6 +30,12 @@ Azure's Managed ID uses OAuth2.0 Client credentials technology as far as I know.
 
 ![metadata_service_Azure_ManagedID.drawio.png](https://github.com/developer-onizuka/OAuth2.0_Authorization/blob/main/metadata_service_Azure_ManagedID.drawio.png)
 
+**(ex) Laundry service in dormitory** <br>
+Laundry service guy does not have any permission to use. So he needs to get a token from dormitory manager.<br>
+But dormitory manager does not have any tokens in person. So he asks to token manager.<br>
+
+![dormitory.drawio.png](https://github.com/developer-onizuka/OAuth2.0_Authorization/blob/main/dormitory.drawio.png)
+
 **(3) From public to cloud resouces** <br>
 According to the table in Section 1, OAuth2.0 is the best practice for the accesss from public to cloud resources, such as some specific SaaS solutions. 
 But, you can use **Service Principal** in Azure AD instead of Managed ID.<br>
