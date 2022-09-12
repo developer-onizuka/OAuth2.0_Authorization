@@ -45,7 +45,7 @@ I believe that ClientID should be managed in some reliable Database systems gett
 ![OAuth2.0_ClientCredentialsFlow.drawio.png](https://github.com/developer-onizuka/OAuth2.0_Authorization/blob/main/OAuth2.0_ClientCredentialsFlow.drawio.png)
 
 **(ex) Laundry service in your home** <br>
-The lazy student decided to live outside dormitory independently. He starts to subscribe two services.<br> One is for housekeeping and the other is for laundry service because he does not have any washing machines in his house. The housekeeping service can federate with some major subscriptions such as sharing washing machines, cars and buying meats and milk at grocery online store. The laundry service can provide a token for subscribers who pay to allow them to use washing machines. <br>
+The lazy student decided to live outside dormitory independently. He starts to subscribe two services.<br> One is for housekeeping and the other is for laundry service because he does not have any washing machines in his house. The housekeeping service can federate with some major subscriptions such as sharing washing machines, cars and buying meats and milk at grocery online store. The laundry service can provide a token for subscribers to allow them to use washing machines. <br>
 One day, he uses the housekeeping service to have them wash his dirty clothes again. He wants them to use the laundry service instead of himself. What he wants to do is **"Single Sign On"** between housekeeping service and laundry service. 
 
 ![laundryService_SSO.drawio.png](https://github.com/developer-onizuka/OAuth2.0_Authorization/blob/main/laundryService_SSO.drawio.png) <br>
