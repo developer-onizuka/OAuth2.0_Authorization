@@ -10,7 +10,7 @@ There are so many methoads to access own cloud resouces from public in general. 
 | #3 | Access Token<br>(OAuth2.0) | - Doesn't need to use secrets such as Access Keys or connection strings in code. | - Difficult to understand how it works. <br> - You need to write a code with some SDKs to get a token from the authorization server's token endpoint. <br> - Default token lifetime ranges between 60-90 minutes. Needs logics toward expiration (But it is not necessary on Managed ID). | - Zero Trust <br> - SaaS subscripution for an unspecified number of customers in general. <br> - [Service principal](https://github.com/developer-onizuka/OAuth2.0_AzureAD#oauth20_azuread) in Azure App registration |
 
 <br>
-I belive that the **Signed URL in AWS CloudFront** is one of the solutions for access from plublic, but I will take up it on another occation. <br>
+I belive that the Signed URL in AWS CloudFront is one of the solutions for access from plublic, but I will take up it on another occation. <br>
 
 # 2. How OAuth2.0 works
 **(1) Goals with OAuth2.0** 
