@@ -54,6 +54,14 @@ One day, he uses the housekeeping service to have them wash his dirty clothes ag
 
 The picture above is based on **OAuth2.0 Client credentials** flow. But if "Authorization code" is used above, **the student will be redirected to login site of the coin laundry service** and asked grant for **the federation the coin laundry service provider with the housekeeping service**.
 
+**(4) From public to cloud resouces via AWS Cognito** <br>
+![AWS_Cognito.drawio.png](https://github.com/developer-onizuka/OAuth2.0_Authorization/blob/main/AWS_Cognito.drawio.png)
+
+<br>
+
+![AWS_Cognito_unauthenticated.drawio.png](https://github.com/developer-onizuka/OAuth2.0_Authorization/blob/main/AWS_Cognito_unauthenticated.drawio.png)
+
+
 # 3. Summary
 - The point is how we should manage a ClientID which is a kind of secrets to get a Token of cloud resouces thru OAuth2.0. <br>
 - The Managed ID is one of implementation using OAuth2.0 and it can be used in Azure while IAM role is used in AWS. <br>
