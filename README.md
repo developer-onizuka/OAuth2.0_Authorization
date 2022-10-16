@@ -73,7 +73,7 @@ Cognito Identity Pools issues a token for each user as a temporary credential. T
 |  | to On-prem's resource | to Cloud's resource |
 | --- | --- | --- |
 | **from on-premises** <br> (within the organization)| Connection String | Connection String |
-| **from different cloud subscriptions** <br> (within the organization)| Connection String | - Connection String <br> - Cross Account Access (but shoud be trusted between AWS accounts) <br> - [Managed identities don't currently support cross-directory scenarios.](https://learn.microsoft.com/en-us/azure/active-directory/managed-identities-azure-resources/managed-identities-faq#can-i-use-a-managed-identity-to-access-a-resource-in-a-different-directorytenant) |
+| **from different cloud subscriptions** <br> (within the organization)| Connection String | - Connection String <br> - [Cross Account Access between AWS accounts](https://n2ws.com/blog/aws-cloud/managing-aws-accounts-cross-account-iam-roles) (but shoud be trusted between AWS accounts) <br> - [Managed identities don't currently support cross-directory scenarios.](https://learn.microsoft.com/en-us/azure/active-directory/managed-identities-azure-resources/managed-identities-faq#can-i-use-a-managed-identity-to-access-a-resource-in-a-different-directorytenant) (But you might use [Azure AD External Identities](https://www.youtube.com/watch?v=3Pi_-pHIT_4) as guest users.)|
 | **from the resources in same cloud subscription** <br> (within the organization)| N/A | OAuth2.0 <br> - AWS: IAM role <br> - Azure: ManagedID |
 | **from anonymous public resources thru RESTful API / GraphQL API** <br> (outside the organization)| OAuth2.0 <br> (Must make the scheme on your own) | OAuth2.0 <br> (Must make the scheme on your own) |
 
