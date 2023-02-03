@@ -55,7 +55,7 @@ One day, he uses the housekeeping service to have them wash his dirty clothes ag
 The picture above is based on **OAuth2.0 Client credentials** flow. But if "Authorization code" is used above, **the student will be redirected to login site of the coin laundry service** and asked grant for **the federation the coin laundry service provider with the housekeeping service**.
 
 **(4) From public to cloud resouces via AWS Cognito** <br>
-Cognito Identity Pools issues a token for each user as a temporary credential. There are two types of managed identities: Authenticated users and Unauthenticated users (guest users). Each access should be controled by Cognito User Pool's authentication and **Cognito Identity Pool's authorization (permissions to be given for each user in advance)** with AssumeRole, AssumeRoleWithIdentiy or GetFederationToken. <br>
+Cognito Identity Pools issues a token for each user as a temporary credential. There are two types of managed identities: Authenticated users and Unauthenticated users (guest users). Each access should be controled by Cognito User Pool's authentication and **Cognito Identity Pool's authorization (permissions to be given for each user in advance)** with AssumeRoleWithSAML, AssumeRoleWithIdentiy or GetFederationToken. <br>
 > https://blog.serverworks.co.jp/summary-of-getting-security-credentials-from-sts <br>
 
 ![AWS_Cognito.drawio.png](https://github.com/developer-onizuka/OAuth2.0_Authorization/blob/main/AWS_Cognito.drawio.png)
