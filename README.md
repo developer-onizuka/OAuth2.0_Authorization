@@ -76,8 +76,8 @@ UserID's function which already can access Bucket A or B ??
 
 |  | STS API | Goal (Use case) | How to work |
 | --- | --- | --- | --- |
-| #1 | GetSessionToken | IAM User's temporary security credentials <br>(Access with IAM User from untrusted environment) | 1. There is already a long-term IAM user (=User-X) in AWS. <br>2. GetSessionToken Request with the Access Key of User-X. <br>3. Check if the User-X has a STS permission. <br>4. Provide User-X's temporary security credentials. |
-| #2 | AssumeRole | IAM Role's temporary security credentials | 1. There is already a long-term IAM user (=User-X) in AWS and custom role (=Role-Y) which is not associated with User-X. <br>2. |
+| #1 | GetSessionToken | IAM User's temporary security credentials <br>(Access with IAM User from untrusted environment) | 1. There is already a long-term IAM user (=User-X) in AWS account. <br>2. GetSessionToken Request with the Access Key of User-X. <br>3. Check if the User-X has a STS permission. <br>4. Provide User-X's temporary security credentials. |
+| #2 | AssumeRole | IAM Role's temporary security credentials | 1. A custom role (=Role-Y) exists in the different AWS account and it is trusted by User-X. <br>2. AssumeRole Request with the Access Key of User-X and ARN or Role-Y.|
 
 # 3. Summary
 - The point is how we should manage a ClientID which is a kind of secrets to get a Token of cloud resouces thru OAuth2.0. <br>
