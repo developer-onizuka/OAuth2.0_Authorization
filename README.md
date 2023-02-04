@@ -74,9 +74,10 @@ UserID's function which already can access Bucket A or B ??
 > https://blog.serverworks.co.jp/summary-of-getting-security-credentials-from-sts <br>
 > https://www.youtube.com/watch?v=QEGo6ZoN-ao <br>
 
-|  | STS API | Goal | AWS_ACCESS_KEY_ID | AWS_SECRET_ACCESS_KEY | AWS_SESSION_TOKEN |
-| --- | --- | --- | --- | --- | --- |
-| #1 | GetSession | To get IAM User temporary security credentials | :heavy_check_mark: | :heavy_check_mark: | - |
+|  | STS API | Goal | How to work |
+| --- | --- | --- | --- |
+| #1 | GetSessionToken | To get IAM User's temporary security credentials | |
+| #2 | AssumeRole | To get IAM Role's temporary security credentials |  |
 
 # 3. Summary
 - The point is how we should manage a ClientID which is a kind of secrets to get a Token of cloud resouces thru OAuth2.0. <br>
