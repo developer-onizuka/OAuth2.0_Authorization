@@ -76,8 +76,7 @@ UserID's function which already can access Bucket A or B ??
 
 |  | STS API | Goal (What you want to get) | How to work |
 | --- | --- | --- | --- |
-| #1 | GetSessionToken | IAM User's temporary security credentials | 1. There is already a Long-term IAM user. <br>
-                                                                     2.                                              |
+| #1 | GetSessionToken | IAM User's temporary security credentials | 1. There is already a Long-term IAM user. <br>2. Issue GetSessionToken Request with the AccessKey of the Long-term IAM user. |
 | #2 | AssumeRole | IAM Role's temporary security credentials |  |
 
 # 3. Summary
