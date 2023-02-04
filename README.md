@@ -65,7 +65,7 @@ The Authenticated and unauthenticated user would be given temporary credential (
 
 ![AWS_Cognito_unauthenticated.drawio.png](https://github.com/developer-onizuka/OAuth2.0_Authorization/blob/main/AWS_Cognito_unauthenticated.drawio.png)
 
-**(5) Temporary security credentials in IAM**
+**(5) Temporary security credentials in IAM**<br>
 You can use the AWS Security Token Service (AWS STS) to create and provide trusted users with temporary security credentials that can control access to your AWS resources. Temporary security credentials work almost identically to long-term access key credentials, with the following differences:
 
 - Temporary security credentials are short-term, as the name implies. They can be configured to last for anywhere from a few minutes to several hours. After the credentials expire, AWS no longer recognizes them or allows any kind of access from API requests made with them.
