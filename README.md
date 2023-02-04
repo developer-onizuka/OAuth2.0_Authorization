@@ -74,7 +74,7 @@ UserID's function which already can access Bucket A or B ??
 > https://blog.serverworks.co.jp/summary-of-getting-security-credentials-from-sts <br>
 > https://www.youtube.com/watch?v=QEGo6ZoN-ao <br>
 
-|  | STS API | Goal (Use case) | How to work |
+|  | STS API | Goal & Use case | How to work |
 | --- | --- | --- | --- |
 | #1 | GetSessionToken | IAM User's temporary security credentials <br> - Access with IAM User from untrusted environment. | 1. Already exists a long-term IAM user (=User-X) in AWS account. <br>2. GetSessionToken Request with the Access Key of User-X. <br>3. Check if the User-X has a trust rerationship. <br>4. Provide User-X's temporary security credentials (ID/Key/Token). |
 | #2 | AssumeRole | IAM Role's temporary security credentials <br> - Access with policy not granted to IAM users. | 1. A custom role (=Role-Y) exists in the different AWS account and it is trusted by User-X. <br>2. AssumeRole Request with the Access Key of User-X and the ARN of Role-Y. <br>3. Check if the User-X has a trust rerationship. <br>4. Provide Role-Y's temporary security credentials (ID/Key/Token). |
