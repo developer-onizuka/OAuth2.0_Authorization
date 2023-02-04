@@ -65,14 +65,17 @@ The Authenticated and unauthenticated user would be given temporary credential (
 
 ![AWS_Cognito_unauthenticated.drawio.png](https://github.com/developer-onizuka/OAuth2.0_Authorization/blob/main/AWS_Cognito_unauthenticated.drawio.png)
 
-**(5) Memo**
-```
-Could be also given temporary credential (AWS_ACCESS_KEY_ID and AWS_SECRET_ACCESS_KEY) 
-by STS through GetFederatedToken API request, so that the federated users can get the 
-UserID's function which already can access Bucket A or B ??
-```
-> https://blog.serverworks.co.jp/summary-of-getting-security-credentials-from-sts <br>
-> https://www.youtube.com/watch?v=QEGo6ZoN-ao <br>
+**(5) Temporary security credentials in IAM**
+You can use the AWS Security Token Service (AWS STS) to create and provide trusted users with temporary security credentials that can control access to your AWS resources. Temporary security credentials work almost identically to long-term access key credentials, with the following differences:
+
+- Temporary security credentials are short-term, as the name implies. They can be configured to last for anywhere from a few minutes to several hours. After the credentials expire, AWS no longer recognizes them or allows any kind of access from API requests made with them.
+- Temporary security credentials are not stored with the user but are generated dynamically and provided to the user when requested. When (or even before) the temporary security credentials expire, the user can request new credentials, as long as the user requesting them still has permissions to do so.
+
+As a result, temporary credentials have the following advantages over long-term credentials:
+
+- You do not have to distribute or embed long-term AWS security credentials with an application.
+- You can provide access to your AWS resources to users without having to define an AWS identity for them. Temporary credentials are the basis for roles and identity federation.
+- The temporary security credentials have a limited lifetime, so you do not have to rotate them or explicitly revoke them when they're no longer needed. After temporary security credentials expire, they cannot be reused. You can specify how long the credentials are valid, up to a maximum limit.
 
 |  | STS API | Goal & Use case | How to work |
 | --- | --- | --- | --- |
@@ -81,6 +84,15 @@ UserID's function which already can access Bucket A or B ??
 | #3 | GetFederationToken | IAM User's temporary security credentials for Federated Users <br> - Facebook Users can access AWS resources as if Facebook user were the IAM User.| 1. Already exists a long-term IAM user (=User-X) in AWS account. <br>2. GetFederationToken Request with User-X's Access Key and IdP's JWT. <br>3. Check if the JWT is valid. <br>4. Provide User-X's temporary security credentials (ID/Key/Token). |
 | #4 | AssumeRoleWithWebIdentity | IAM Role's temporary security credentials for Federated Users <br> - Facebook Users can access AWS resources as if Facebook user had the IAM Role. | 1. A custom role (=Role-Y) exists in AWS account. <br>2. AssumeRoleWithWebIdentity Request with IdP's JWT and the ARN of Role-Y. <br>3. Check if the JWT is valid. <br>4. Provide Role-Y's temporary security credentials (ID/Key/Token). |
 
+**(6) Memo**
+```
+Could be also given temporary credential (AWS_ACCESS_KEY_ID and AWS_SECRET_ACCESS_KEY) 
+by STS through GetFederatedToken API request, so that the federated users can get the 
+UserID's function which already can access Bucket A or B ??
+```
+> https://blog.serverworks.co.jp/summary-of-getting-security-credentials-from-sts <br>
+> https://www.youtube.com/watch?v=QEGo6ZoN-ao <br>
+> 
 # 3. Summary
 - The point is how we should manage a ClientID which is a kind of secrets to get a Token of cloud resouces thru OAuth2.0. <br>
 - The Managed ID is one of implementation using OAuth2.0 and it can be used in Azure while IAM role is used in AWS. <br>
