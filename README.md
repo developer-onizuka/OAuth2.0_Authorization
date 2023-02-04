@@ -60,7 +60,9 @@ Cognito Identity Pools issues a token for each user as a temporary credential. T
 The Authenticated and unauthenticated user would be given temporary credential (AWS_ACCESS_KEY_ID, AWS_SECRET_ACCESS_KEY and AWS_SESSION_TOKEN) by STS through **AssumeRoleWithWebIdentity** API request with Role ARN, so that the Federated user can get the Role A and an UserID which does not have any roles and the unauthenticated user can get Role B and an UserID which does not have any roles. <br>
 # Memo
 ```
-The unauthenticated user could be also given temporary credential (AWS_ACCESS_KEY_ID and AWS_SECRET_ACCESS_KEY) by STS through GetFederatedToken API request, so that the unauthenticated user can get the UserID which already can access Bucket B.<br>
+The unauthenticated user could be also given temporary credential (AWS_ACCESS_KEY_ID and AWS_SECRET_ACCESS_KEY) 
+by STS through GetFederatedToken API request, so that the unauthenticated user can get the UserID which already 
+can access Bucket B.
 ```
 > https://blog.serverworks.co.jp/summary-of-getting-security-credentials-from-sts <br>
 
