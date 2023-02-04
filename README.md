@@ -67,9 +67,9 @@ The Authenticated and unauthenticated user would be given temporary credential (
 
 - Memo
 ```
-The unauthenticated user could be also given temporary credential (AWS_ACCESS_KEY_ID and AWS_SECRET_ACCESS_KEY) 
-by STS through GetFederatedToken API request, so that the unauthenticated user can get the UserID which already 
-can access Bucket B.
+Could be also given temporary credential (AWS_ACCESS_KEY_ID and AWS_SECRET_ACCESS_KEY) 
+by STS through GetFederatedToken API request, so that the federated users can get the 
+UserID's function which already can access Bucket A or B ??
 ```
 > https://blog.serverworks.co.jp/summary-of-getting-security-credentials-from-sts <br>
 
