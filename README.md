@@ -65,7 +65,7 @@ The Authenticated and unauthenticated user would be given temporary credential (
 
 ![AWS_Cognito_unauthenticated.drawio.png](https://github.com/developer-onizuka/OAuth2.0_Authorization/blob/main/AWS_Cognito_unauthenticated.drawio.png)
 
-- Memo
+**(5) Memo**
 ```
 Could be also given temporary credential (AWS_ACCESS_KEY_ID and AWS_SECRET_ACCESS_KEY) 
 by STS through GetFederatedToken API request, so that the federated users can get the 
