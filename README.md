@@ -61,6 +61,7 @@ The Authenticated and unauthenticated user would be given temporary credential (
 
 ![AWS_Cognito.drawio.png](https://github.com/developer-onizuka/OAuth2.0_Authorization/blob/main/AWS_Cognito.drawio.png)
 
+> https://aws.amazon.com/jp/blogs/compute/secure-api-access-with-amazon-cognito-federated-identities-amazon-cognito-user-pools-and-amazon-api-gateway/
 <br>
 
 ![AWS_Cognito_unauthenticated.drawio.png](https://github.com/developer-onizuka/OAuth2.0_Authorization/blob/main/AWS_Cognito_unauthenticated.drawio.png)
