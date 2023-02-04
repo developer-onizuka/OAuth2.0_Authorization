@@ -72,6 +72,7 @@ by STS through GetFederatedToken API request, so that the federated users can ge
 UserID's function which already can access Bucket A or B ??
 ```
 > https://blog.serverworks.co.jp/summary-of-getting-security-credentials-from-sts <br>
+> https://www.youtube.com/watch?v=QEGo6ZoN-ao <br>
 
 # 3. Summary
 - The point is how we should manage a ClientID which is a kind of secrets to get a Token of cloud resouces thru OAuth2.0. <br>
