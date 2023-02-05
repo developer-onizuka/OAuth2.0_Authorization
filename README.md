@@ -58,7 +58,7 @@ The picture above is based on **OAuth2.0 Client credentials** flow. But if "Auth
 **(4) From public to cloud resouces via AWS Cognito** <br>
 Cognito Identity Pools issues a token for each user as a temporary credential. There are two types of managed identities: Authenticated users and Unauthenticated users (guest users). <br>
 The Authenticated and unauthenticated user would be given temporary credential (AWS_ACCESS_KEY_ID, AWS_SECRET_ACCESS_KEY and AWS_SESSION_TOKEN) by STS through **AssumeRoleWithWebIdentity** API request with Role ARN, so that the Federated user can get the Role A and an UserID which does not have any roles (and the unauthenticated user can get Role B and an UserID which does not have any roles). <br>
-In #3, you can understand the difference between STS APIs which can provide with temporary security credentials such as AssumeRoleWithWebIdentity and GetSessionToken etc.<br>
+In #3, you can understand the difference between STS APIs which can provide with temporary security credentials such as GetSessionToken and AssumeRoleWithWebIdentity etc.<br>
 
 ![AWS_Cognito.drawio.png](https://github.com/developer-onizuka/OAuth2.0_Authorization/blob/main/AWS_Cognito.drawio.png)
 
