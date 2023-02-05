@@ -66,7 +66,7 @@ The Authenticated and unauthenticated user would be given temporary credential (
 
 ![AWS_Cognito_unauthenticated.drawio.png](https://github.com/developer-onizuka/OAuth2.0_Authorization/blob/main/AWS_Cognito_unauthenticated.drawio.png)
 
-**(5) Temporary security credentials in IAM**<br>
+# 3. Temporary security credentials in IAM
 You can use the AWS Security Token Service (AWS STS) to create and provide trusted users with temporary security credentials that can control access to your AWS resources. Temporary security credentials work almost identically to long-term access key credentials, with the following differences:
 
 - Temporary security credentials are short-term, as the name implies. They can be configured to last for anywhere from a few minutes to several hours. After the credentials expire, AWS no longer recognizes them or allows any kind of access from API requests made with them.
@@ -86,17 +86,11 @@ As a result, temporary credentials have the following advantages over long-term 
 | #4 | AssumeRoleWithWebIdentity | IAM Role's temporary security credentials for Federated Users <br> - Facebook Users can access AWS resources as if Facebook user had the IAM Role. | 1. A custom role (=Role-Y) exists in AWS account. <br>2. AssumeRoleWithWebIdentity Request with IdP's JWT and **the ARN of Role-Y**. <br>3. Check if the JWT is valid. <br>4. Provide Role-Y's temporary security credentials (ID/Key/Token). <br><br> *Instead of directly calling AssumeRoleWithWebIdentity, AWS recommends that you use Amazon Cognito and the Amazon Cognito credentials provider with the AWS SDKs for mobile development.* |
 
 > https://docs.aws.amazon.com/ja_jp/IAM/latest/UserGuide/id_credentials_temp_request.html <br>
-
-**(6) Memo**
-```
-Could be also given temporary credential (AWS_ACCESS_KEY_ID and AWS_SECRET_ACCESS_KEY) 
-by STS through GetFederatedToken API request, so that the federated users can get the 
-UserID's function which already can access Bucket A or B ??
-```
 > https://blog.serverworks.co.jp/summary-of-getting-security-credentials-from-sts <br>
 > https://www.youtube.com/watch?v=QEGo6ZoN-ao <br>
-> 
-# 3. Summary
+
+
+# 4. Summary
 - The point is how we should manage a ClientID which is a kind of secrets to get a Token of cloud resouces thru OAuth2.0. <br>
 - The Managed ID is one of implementation using OAuth2.0 and it can be used in Azure while IAM role is used in AWS. <br>
 - As it turns out, Managed ID in Azure is a kind of system to manage the ClientID securely thru REST API, I believe. <br>
