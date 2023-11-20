@@ -3,7 +3,7 @@
 # 1. Access cloud resouces from public
 There are so many methoads to access own cloud resouces from public in general. Writing them down with pros and cons.
 <br>
-I belive that the **Signed URL in AWS CloudFront** is one of the solutions for access from plublic, but I will take up it on another occation. <br>
+I believe that the **Signed URL in AWS CloudFront** is one of the solutions for access from plublic, but I will take up it on another occation. <br>
 
 |  | Method | Pros | Cons | Use Case |
 | --- | --- | --- | --- | --- |
