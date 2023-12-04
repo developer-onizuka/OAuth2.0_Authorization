@@ -70,6 +70,9 @@ In [3. Temporary security credentials in IAM](https://github.com/developer-onizu
 
 **(5) From Onprem to cloud resouces via AWS Cognito with Hashi-corp Vault** <br>
 Managed ID is one of dedicated services in Azure which you can not use in on-premises environment. However, by creating a solution like Managed ID, you can easily use OAuth2.0 even on-premises.<br>
+
+Fig. STS.GetFederationToken Request <br>
+
 T.B.D
 
 # 3. Temporary security credentials in IAM
