@@ -13,7 +13,7 @@ I believe that the **Signed URL in AWS CloudFront** is one of the solutions for 
 
 
 # 2. How OAuth2.0 works
-**(1) Goals with OAuth2.0** 
+# **(1) Goals with OAuth2.0** 
 - App should get a Token from the Token Endpoint of OAuth2.0's Authorization server to access some specific resouces in the cloud.<br>
 - In order to get a Token, App has to send the ClientID (and its Client Secret) to the Token Endpoint of OAuth2.0's Authorization server.<br>
 - No ClientIDs should be written in the App because malicious hacker can get it easily and the resouces might have unexpected access from someone.<br>
@@ -27,27 +27,27 @@ By the way, there are four types of grant in OAuth2.0.
 ```
 But I take **Client credentials** as an example because it is used in Azure's Metadata Service for Managed ID and easy for me to explain.
 
-**(2) Between cloud resouces** <br>
+# **(2) Between cloud resouces** <br>
 You can use Azure's Metadata Service for Managed ID while the access is between cloud resouces.<br>
 Azure's Managed ID uses OAuth2.0 Client credentials technology as far as I know. The ClientID in metadata service is already registered by system administrator of the Azure subscription. No ClientIDs is written in the App as you can see below: <br>
 
 ![metadata_service_Azure_ManagedID.drawio.png](https://github.com/developer-onizuka/OAuth2.0_Authorization/blob/main/metadata_service_Azure_ManagedID.drawio.png)
 
-**(ex) Laundry service in dormitory** <br>
+# **(ex) Laundry service in dormitory** <br>
 One day, a lazy student in a dormitory uses a housekeeping service to have them wash his dirty clothes. As you can imagine, the service guy does not have any permissions to use washing machine in the dormitory. So the service guy needs to ask dormitory manager a token.<br>
 But dormitory manager does not have any tokens in person, neither. Please also note the dormitory manager does not have any knowledges about washing machines. So the dormitory manager asks it for the token manager who manages and maintains washing machines in the dormitory.<br>
 Finally, the service guy gets a token and can put it into a washing machine so that he can wash his costomer's dirty clothes. But please note the service guy can not do anything besides using washing machines. This is because the service guy does not have any tokens to use dormitorie's property such as kitchen or bathroom.
 
 ![dormitory.drawio.png](https://github.com/developer-onizuka/OAuth2.0_Authorization/blob/main/dormitory.drawio.png)
 
-**(3) From public to cloud resouces via Azure Service Principal (Custome Identity Broker Application For Enterprise)** <br>
+# **(3) From public to cloud resouces via Azure Service Principal (Custome Identity Broker Application For Enterprise)** <br>
 According to the table in Section 1, OAuth2.0 is the best practice for the accesss from public to cloud resources, such as some specific SaaS solutions. 
 But, you can also use **Service Principal** in Azure AD instead of Managed ID used as Azure's Metadata Service.<br>
 I believe that ClientID should be managed in some reliable Database systems getting along with your App.
 
 ![OAuth2.0_ClientCredentialsFlow.drawio.png](https://github.com/developer-onizuka/OAuth2.0_Authorization/blob/main/OAuth2.0_ClientCredentialsFlow.drawio.png)
 
-**(ex) Laundry service in your home** <br>
+# **(ex) Laundry service in your home** <br>
 The lazy student decided to live outside dormitory independently. He starts to subscribe two services.<br> One is for housekeeping and the other is for laundry service because he does not have any washing machines in his house. The housekeeping service can federate with some major subscriptions such as sharing washing machines, cars and buying meats and milk at grocery online store. The laundry service can provide subscribers with a token to allow them to use washing machines. <br>
 One day, he uses the housekeeping service to have them wash his dirty clothes again. He wants them to use the laundry service instead of himself. What he wants to do is **"Single Sign On"** between housekeeping service and laundry service. 
 
@@ -55,7 +55,7 @@ One day, he uses the housekeeping service to have them wash his dirty clothes ag
 
 The picture above is based on **OAuth2.0 Client credentials** flow. But if "Authorization code" is used above, **the student will be redirected to login site of the coin laundry service** and asked grant for **the federation the coin laundry service provider with the housekeeping service**.
 
-**(4) From public to cloud resouces via AWS Cognito** <br>
+# **(4) From public to cloud resouces via AWS Cognito** <br>
 You can utilize Cognito User Pools and Identity Pools instead of using Custom Identity Broker Application above.<br> 
 Cognito Identity Pools issues a token for each user as a temporary credential. There are two types of managed identities: Authenticated users and Unauthenticated users (guest users). <br>
 The Authenticated and unauthenticated user would be given temporary credential (AWS_ACCESS_KEY_ID, AWS_SECRET_ACCESS_KEY and AWS_SESSION_TOKEN) by STS through **AssumeRoleWithWebIdentity** API request with Role ARN, so that the Federated user can get the Role A and an UserID which does not have any roles (and the unauthenticated user can get Role B and an UserID which does not have any roles). <br>
@@ -68,7 +68,7 @@ In [3. Temporary security credentials in IAM](https://github.com/developer-onizu
 
 ![AWS_Cognito_unauthenticated.drawio.png](https://github.com/developer-onizuka/OAuth2.0_Authorization/blob/main/AWS_Cognito_unauthenticated.drawio.png)
 
-**(5) From Onprem with Hashi-Corp Vault to cloud resouces via public IdP's Authentication** <br>
+# **(5) From Onprem with Hashi-Corp Vault to cloud resouces via public IdP's Authentication** <br>
 Metadata service is one of dedicated services in Azure or AWS which you can not use in on-premises environment. However, you can easily create a kind of solutions like Metadata service even in on-premises, by using OAuth2.0 with the Hashi-Corp Vault.<br>
 In addition, you can use Intel SGX to protect the Key in memory to prevent from compromising caused by some OS vulnerability issues.
 
