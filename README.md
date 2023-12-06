@@ -68,7 +68,7 @@ In [3. Temporary security credentials in IAM](https://github.com/developer-onizu
 
 ![AWS_Cognito_unauthenticated.drawio.png](https://github.com/developer-onizuka/OAuth2.0_Authorization/blob/main/AWS_Cognito_unauthenticated.drawio.png)
 
-**(5) From Onprem to cloud resouces via AWS Cognito with Hashi-Corp Vault** <br>
+**(5) From Onprem with Hashi-Corp Vault to cloud resouces via public IdP's Authentication** <br>
 Metadata service is one of dedicated services in Azure or AWS which you can not use in on-premises environment. However, by creating a solution like Metadata service, you can easily use OAuth2.0 even on-premises with the Hashi-Corp Vault.<br>
 In addition, you can use Intel SGX to protect the Key in memory to prevent from compromising caused by some OS vulnerability issues.
 
