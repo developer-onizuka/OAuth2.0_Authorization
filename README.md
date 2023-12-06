@@ -71,9 +71,7 @@ In [3. Temporary security credentials in IAM](https://github.com/developer-onizu
 **(5) From Onprem to cloud resouces via AWS Cognito with Hashi-corp Vault** <br>
 Managed ID is one of dedicated services in Azure which you can not use in on-premises environment. However, by creating a solution like Managed ID, you can easily use OAuth2.0 even on-premises.<br>
 
-Fig. STS.GetFederationToken Request <br>
-
-T.B.D
+![AWS_Cognito_with_Vault.drawio.png](https://github.com/developer-onizuka/Diagrams/blob/main/OAuth2.0_Authorization/AWS_Cognito_with_Vault.drawio.png)
 
 # 3. Temporary security credentials in IAM
 You can use the AWS Security Token Service (AWS STS) to create and provide trusted users with temporary security credentials that can control access to your AWS resources. Temporary security credentials work almost identically to long-term access key credentials, with the following differences:
