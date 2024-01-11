@@ -27,7 +27,7 @@ By the way, there are four types of grant in OAuth2.0.
 ```
 But I take **Client credentials** as an example because it is used in Azure's Metadata Service for Managed ID and easy for me to explain.
 
-# **(2) Between cloud resouces** <br>
+# **(2) Between cloud resources** <br>
 You can use Azure's Metadata Service for Managed ID while the access is between cloud resouces.<br>
 Azure's Managed ID uses OAuth2.0 Client credentials technology as far as I know. The ClientID in metadata service is already registered by system administrator of the Azure subscription. No ClientIDs is written in the App as you can see below: <br>
 
@@ -40,7 +40,7 @@ Finally, the service guy gets a token and can put it into a washing machine so t
 
 ![dormitory.drawio.png](https://github.com/developer-onizuka/OAuth2.0_Authorization/blob/main/dormitory.drawio.png)
 
-# **(3) From public to cloud resouces via Azure Service Principal (Custome Identity Broker Application For Enterprise)** <br>
+# **(3) From public to cloud resources via Azure Service Principal (Custome Identity Broker Application For Enterprise)** <br>
 According to the table in Section 1, OAuth2.0 is the best practice for the accesss from public to cloud resources, such as some specific SaaS solutions. 
 But, you can also use **Service Principal** in Azure AD instead of Managed ID used as Azure's Metadata Service.<br>
 I believe that ClientID should be managed in some reliable Database systems getting along with your App.
@@ -55,7 +55,7 @@ One day, he uses the housekeeping service to have them wash his dirty clothes ag
 
 The picture above is based on **OAuth2.0 Client credentials** flow. But if "Authorization code" is used above, **the student will be redirected to login site of the coin laundry service** and asked grant for **the federation the coin laundry service provider with the housekeeping service**.
 
-# **(4) From public to cloud resouces via AWS Cognito** <br>
+# **(4) From public to cloud resources via AWS Cognito** <br>
 You can utilize Cognito User Pools and Identity Pools instead of using Custom Identity Broker Application above.<br> 
 Cognito Identity Pools issues a token for each user as a temporary credential. There are two types of managed identities: Authenticated users and Unauthenticated users (guest users). <br>
 The Authenticated and unauthenticated user would be given temporary credential (AWS_ACCESS_KEY_ID, AWS_SECRET_ACCESS_KEY and AWS_SESSION_TOKEN) by STS through **AssumeRoleWithWebIdentity** API request with Role ARN, so that the Federated user can get the Role A and an UserID which does not have any roles (and the unauthenticated user can get Role B and an UserID which does not have any roles). <br>
@@ -68,7 +68,20 @@ In [3. Temporary security credentials in IAM](https://github.com/developer-onizu
 
 ![AWS_Cognito_unauthenticated.drawio.png](https://github.com/developer-onizuka/OAuth2.0_Authorization/blob/main/AWS_Cognito_unauthenticated.drawio.png)
 
-# **(5) From Onprem with Hashi-Corp Vault to cloud resouces via public IdP's Authentication** <br>
+# **(5) From onprem with to cloud resources via AWS Directory Service**
+AD Connector is designed to give you an easy way to establish a trusted relationship between your Active Directory and AWS. When AD Connector is configured, the trust allows you to:<br>
+
+- Sign in to AWS applications such as Amazon WorkSpaces, Amazon WorkDocs, and Amazon WorkMail by using your Active Directory credentials.
+- Seamlessly join Windows instances to your Active Directory domain either through the Amazon EC2 launch wizard or programmatically through the EC2 Simple System Manager (SSM) API.
+- Provide federated sign-in to the AWS Management Console by mapping Active Directory identities to AWS Identity and Access Management (IAM) roles.
+
+AD Connector cannot be used with your custom applications, as it is only used for secure AWS integration for the three use-cases mentioned above. **Custom applications relying on your on-premises Active Directory should communicate with your domain controllers directly or utilize AWS Managed Microsoft AD rather than integrating with AD Connector.** <br>
+
+> https://aws.amazon.com/jp/blogs/security/how-to-connect-your-on-premises-active-directory-to-aws-using-ad-connector/
+
+![AWSDirectoryService.png](https://d2908q01vomqb2.cloudfront.net/22d200f8670dbdb3e253a90eee5098477c95c23d/2023/08/15/img3.png)
+
+# **(6) From Onprem with Hashi-Corp Vault to cloud resources via public IdP's Authentication** <br>
 Metadata service is one of dedicated services in Azure or AWS which you can not use in on-premises environment. However, you can easily create a kind of solutions like Metadata service even in on-premises, by using OAuth2.0 with the Hashi-Corp Vault.<br>
 In addition, you can use Intel SGX to protect the Key in memory to prevent from compromising caused by some OS vulnerability issues.
 
