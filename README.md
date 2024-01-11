@@ -81,6 +81,8 @@ AD Connector cannot be used with your custom applications, as it is only used fo
 
 ![AWSDirectoryService.png](https://d2908q01vomqb2.cloudfront.net/22d200f8670dbdb3e253a90eee5098477c95c23d/2023/08/15/img3.png)
 
+Armed with information above, you can create a trust between your Active Directory and AWS. In addition, you now have a quick and simple way to enable single sign-on without needing to replicate identities or deploy additional infrastructure on premises.<br>
+
 # **(6) From Onprem with Hashi-Corp Vault to cloud resources via public IdP's Authentication** <br>
 Metadata service is one of dedicated services in Azure or AWS which you can not use in on-premises environment. However, you can easily create a kind of solutions like Metadata service even in on-premises, by using OAuth2.0 with the Hashi-Corp Vault.<br>
 In addition, you can use Intel SGX to protect the Key in memory to prevent from compromising caused by some OS vulnerability issues.
